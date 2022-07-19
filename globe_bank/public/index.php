@@ -8,11 +8,7 @@
 
   <body>
 
-<h1>Globe Bank</h1>
-
-
-
-
+    <h1>Globe Bank: Coming Soon</h1>
 
   </body>
 </html>

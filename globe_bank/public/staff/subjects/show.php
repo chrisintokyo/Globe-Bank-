@@ -1,23 +1,21 @@
-
-
 <?php require_once('../../../private/initialize.php'); ?>
+
 <?php
-$id = $_GET['id'] ?? '1';
-echo h($id);
+// $id = isset($_GET['id']) ? $_GET['id'] : '1';
+$id = $_GET['id'] ?? '1'; // PHP > 7.0
 ?>
+
 <?php $page_title = 'Show Subject'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 
 <div id="content">
 
-<a class="back-link" href="<?php echo url_for('/staff/subjects/index.php');
-?>&laquo; Back to List</a>
+  <a class="back-link" href="<?php echo url_for('/staff/subjects/index.php'); ?>">&laquo; Back to List</a>
 
-<div class="subject show">
+  <div class="subject show">
 
-Subject ID: <?php echo h($id); ?>
+    Subject ID: <?php echo h($id); ?>
 
+  </div>
 
-<a href="show.php?name=<?php echo u('John Doe'); ?>">Link</a><br />
-<a href="show.php?name=<?php echo u('Widgets&More'); ?>">Link</a><br />
-<a href="show.php?name=<?php echo u(' !#*?'); ?>">Link</a><br />
+</div>
