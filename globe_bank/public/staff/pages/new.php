@@ -2,6 +2,14 @@
 
 require_once('../../../private/initialize.php');
 
+
+$subject_count = find_all_subjects();
+$subject_count = mysqli_num_rows($ubject_set) + 1;
+mysqli_free_result($subject_set);
+
+$subject = [];
+$subject["position"] = $subject_count;
+
 $test = $_GET['test'] ?? '';
 
 
@@ -31,7 +39,15 @@ if($test == '404') {
   redirect_to(url_for('/staff/pages/index.php'));
 }
 ?>
-
+<?php
+          for($i=1; $i <= $subject_count; $i++){
+            echo "<option value=\"{$i}\"";
+            if($subject["position"] == $i){
+              echo " selected";
+            }
+            echo ">{$i}</option>";
+          }
+          ?>
 <?php $page_title = 'Create Page'; ?>
 <?php include(SHARED_PATH . '/staff_header.php'); ?>
 

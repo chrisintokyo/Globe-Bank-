@@ -43,4 +43,29 @@ function is_get_request() {
   return $_SERVER['REQUEST_METHOD'] == 'GET';
 }
 
+
+function update_subjects($subject) {
+  global $db;
+
+  $sql = "INSERT INTO subjects ";
+  $sql .= "(menu_name, position, visible) ";
+  $sql .=VALUES (";
+  $sql .= "'" . $subject['menu_name'] . "', ";
+  $sql .= "'" . $subject['position'] . "', ";
+  $sql .= "'" . $subject['visible'] . "', ";
+$sql .= "WHERE id='" . $id . "' ";
+$sql .= "LIMIT 1";
+
+$result = mysqli_query()
+
+// For UPDATE statements, $result is true/false
+
+if($result) {
+  return true;
+} else { 
+  //UPDATE failed
+  echo mysqli_error($db);
+  exit;
+}
+}
 ?>
