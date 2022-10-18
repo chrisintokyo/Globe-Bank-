@@ -62,10 +62,29 @@ $result = mysqli_query()
 
 if($result) {
   return true;
+  return true;
 } else { 
   //UPDATE failed
   echo mysqli_error($db);
   exit;
 }
 }
+
+function delete_subject($id) {
+  global $db;
+  $sql = "DELETE FROM subjects ";
+$sql .= "WHERE id='" . $id . "' ";
+$sql .= "LIMIT 1";
+
+$result = mysqli_query($db, $sql);
+
+if($result) {
+    redirect_to(url_for('/staff/subjects/index.php'))
+} else {
+    echo mysqli_error($db);
+    db_disconnect($db);
+    exit;
+
+}
+
 ?>
